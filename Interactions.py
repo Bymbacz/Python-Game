@@ -1,2 +1,2 @@
 #obsluguje obiekty interaktywne
-dane_do_commita = "commit"
+dane_do_commita = ""

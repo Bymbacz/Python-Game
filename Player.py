@@ -1,2 +1,2 @@
 #rysuje gracza, odpowiada za jego ruch, interakcje, itd...
-dane_do_commita = "commit"
+dane_do_commita = ""
