@@ -11,8 +11,10 @@ class Menu:
         self.positions_were_set = False
         self.x_board_size: int  # needs setter
         self.y_board_size: int  # needs setter
-        self.i=0
-        self.keys=None
+        self.i = 0
+        self.j = 0
+
+        self.keys = None
 
     def give_board_size(self, x, y):
         self.x_board_size = x
@@ -51,30 +53,29 @@ class Menu:
         menu_surface.blit(fast_surface, (0, self.resize_y(0.3)))
         screen.blit(menu_surface, (self.resize_x(0.3), self.resize_y(0.3)))  # needs arg: screen
 
-    def run(self):
+    def run(self,engine):
         if self.positions_were_set:
             self.keys = pygame.key.get_pressed()
+            # self.i+=1
             if self.keys[pygame.K_SPACE]:
-                self.action = Action.START  # ew pozniej dodac jak to dziala
-                # self.i+=1
+                self.action = Action.START
             elif self.keys[pygame.K_ESCAPE]:
-                # self.i+=1
                 self.action = Action.EXIT
             elif self.keys[pygame.K_PAGEUP]:
-                # self.i+=1
-                self.action = Action.SPEED_FAST  # ew pozniej dodac jak to dziala
+                self.action = Action.SPEED_FAST  # ew kiedy beda nowe elementy to zostanie zmienione
             elif self.keys[pygame.K_PAGEDOWN]:
-                # self.i+=1
-                self.action = Action.SPEED_SLOW  # ew pozniej dodac jak to dziala
+                self.action = Action.SPEED_SLOW  # ew kiedy beda nowe elementy to zostanie zmienione
             else:
+                # self.j+=1
+                # print(self.j-self.i)
                 pass
-                # print(self.i)
             # ew pozniej dodac inne
 
             match self.action:
                 case Action.START:
                     action = Action.NOTHING
-                    # todo
+                    engine.hide_menu()
+                    engine.show_map()
                     pass
                 case Action.EXIT:
                     print("Hello")
