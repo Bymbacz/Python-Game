@@ -5,6 +5,8 @@
 	-bronie
 	-inetraktywne
 	-przeciwnicy
+	-poziom
+	(-ustawienia)
 
 -GUI:
 	-okno
