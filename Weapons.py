@@ -1,0 +1,1 @@
+#animacje przedmiotu, wyswietla go

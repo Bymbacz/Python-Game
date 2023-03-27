@@ -1,0 +1,1 @@
+#beda tu ustawienia do gry, ilosc FPS, szerokosc okna itd.

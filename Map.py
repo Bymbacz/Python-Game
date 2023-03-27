@@ -1,0 +1,1 @@
+#zawiera dane Map do odpowiednich poziomów

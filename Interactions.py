@@ -1,0 +1,1 @@
+#obsluguje obiekty interaktywne

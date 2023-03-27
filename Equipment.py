@@ -1,0 +1,1 @@
+#odpowiada za wyswietlanie i obslugiwanie ekwipunku
