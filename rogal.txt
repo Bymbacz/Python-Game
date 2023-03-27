@@ -1,0 +1,15 @@
+ -klasy:
+	-mapa
+	-gracz
+	-obiekty
+	-bronie
+	-inetraktywne
+	-przeciwnicy
+
+-GUI:
+	-okno
+	-grafika
+	-ruch
+	-ataki
+
+-Testy:
