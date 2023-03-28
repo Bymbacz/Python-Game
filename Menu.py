@@ -39,7 +39,7 @@ class Menu:
         speed_up_font = pygame.font.Font(None, font_size)
 
         menu_surface = pygame.Surface((width, height))
-        menu_surface.fill("White")
+        menu_surface.fill("black")
         self.menu_surface = menu_surface
 
         start_surface = start_font.render("Start <- Press space", False, "Green")
