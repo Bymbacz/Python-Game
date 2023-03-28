@@ -1,7 +1,7 @@
 import math
 from enum import Enum
-import pygame
 
+from Settings import *
 
 class Menu:
     def __init__(self):
@@ -39,13 +39,13 @@ class Menu:
         speed_up_font = pygame.font.Font(None, font_size)
 
         menu_surface = pygame.Surface((width, height))
-        menu_surface.fill("black")
+        menu_surface.fill(MENU_BACKGROUND)
         self.menu_surface = menu_surface
 
-        start_surface = start_font.render("Start <- Press space", False, "Green")
-        exit_surface = exit_font.render("Exit This App <- Press esc", False, "Green")
-        slow_surface = speed_down_font.render("Make Game Slower <- Press pgup", False, "Green")
-        fast_surface = speed_up_font.render("Make Game Faster <- Press pgdn", False, "Green")
+        start_surface = start_font.render("Start <- Press space", False, MENU_FONT_SIZE)
+        exit_surface = exit_font.render("Exit This App <- Press esc", False, MENU_FONT_SIZE)
+        slow_surface = speed_down_font.render("Make Game Slower <- Press pgdn", False, MENU_FONT_SIZE)
+        fast_surface = speed_up_font.render("Make Game Faster <- Press pgup", False, MENU_FONT_SIZE)
 
         menu_surface.blit(start_surface, (0, 0))
         menu_surface.blit(exit_surface, (0, self.resize_y(0.1)))
@@ -53,10 +53,13 @@ class Menu:
         menu_surface.blit(fast_surface, (0, self.resize_y(0.3)))
         screen.blit(menu_surface, (self.resize_x(0.3), self.resize_y(0.3)))  # needs arg: screen
 
+    def hide(self):
+        pass #todo
+
     def run(self,engine):
         if self.positions_were_set:
             self.keys = pygame.key.get_pressed()
-            # self.i+=1
+
             if self.keys[pygame.K_SPACE]:
                 self.action = Action.START
             elif self.keys[pygame.K_ESCAPE]:
@@ -66,30 +69,25 @@ class Menu:
             elif self.keys[pygame.K_PAGEDOWN]:
                 self.action = Action.SPEED_SLOW  # ew kiedy beda nowe elementy to zostanie zmienione
             else:
-                # self.j+=1
-                # print(self.j-self.i)
                 pass
             # ew pozniej dodac inne
 
             match self.action:
                 case Action.START:
-                    action = Action.NOTHING
+                    self.hide()
                     engine.hide_menu()
                     engine.show_map()
                     pass
                 case Action.EXIT:
-                    print("Hello")
-                    action = Action.NOTHING
                     pygame.quit()
                     exit(0)
                 case Action.SPEED_FAST:
-                    action = Action.NOTHING
                     # todo
                     pass
                 case Action.SPEED_SLOW:
-                    action = Action.NOTHING
                     # todo
                     pass
+            action = Action.NOTHING
 
 
 class Action(Enum):
