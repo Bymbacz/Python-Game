@@ -1,4 +1,3 @@
-#beda tu ustawienia do gry, ilosc FPS, szerokosc okna itd.
 from csv import reader
 from os import walk
 import pygame
@@ -7,15 +6,15 @@ import pygame
 WIDTH = 1280
 HEIGHT = 720
 MODE_TYPES = [pygame.FULLSCREEN, pygame.NOFRAME, pygame.SHOWN] #sposob wyswietlania
-MODE=pygame.FULLSCREEN
 
-#ustawienia ładowania gry
 TILESIZE = 64
 SCALE = 4
 
 FPS = 60
 
-# importowanie plikow csv
+MENU_FONT_SIZE= "Green"
+MENU_BACKGROUND = "Black"
+
 def import_csv_layout(path):
 	terrain_map = []
 	with open(path) as level_map:

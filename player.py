@@ -1,6 +1,6 @@
 #rysuje gracza, odpowiada za jego ruch, interakcje, itd...
 import pygame
-from settings import *
+from Settings import *
 
 class Player(pygame.sprite.Sprite):
 	def __init__(self,pos,groups,obstacle_sprites):

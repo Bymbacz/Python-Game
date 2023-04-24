@@ -1,5 +1,5 @@
 import pygame, sys
-from settings import *
+from Settings import *
 from menu import Menu
 from map import Map
 from level import Level
@@ -9,7 +9,7 @@ class Game:
     def __init__(self):
         self.menu_is_present = True
         pygame.init()
-        self.resolution = (WIDTH, HEIGHT)  # rozdzielczosc do zmiany, pozniej wypelniana z ustawien (settings.py)
+        self.resolution = (WIDTH, HEIGHT)  # rozdzielczosc do zmiany, pozniej wypelniana z ustawien (Settings.py)
         self.screen = pygame.display.set_mode(self.resolution, MODE_TYPES[2])
         pygame.display.set_caption('Projekt Rogal')  # nazwa do zmiany
         self.clock = pygame.time.Clock()
@@ -38,7 +38,7 @@ class Game:
                 self.screen.fill('black')
                 self.level.run()
             pygame.display.update()
-            self.clock.tick(FPS)  # to sa FPS, do ustawienia pozniej z (settings.py)
+            self.clock.tick(FPS)  # to sa FPS, do ustawienia pozniej z (Settings.py)
 
 
 if __name__ == '__main__':

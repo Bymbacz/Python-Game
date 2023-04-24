@@ -1,6 +1,6 @@
 #Odpowiada za wyswietlanie mapy, gracza i obiektow, przekazuje to wszystko do maina
 import pygame
-from settings import *
+from Settings import *
 from player import Player
 from tile import Tile
 from random import choice
