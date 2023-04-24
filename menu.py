@@ -75,7 +75,6 @@ class Menu:
                 case Action.START:
                     action = Action.NOTHING
                     engine.hide_menu()
-                    engine.show_map()
                     pass
                 case Action.EXIT:
                     print("Hello")

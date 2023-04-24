@@ -1,7 +1,8 @@
 import pygame, sys
-from Settings import *
-from Menu import Menu
-from Map import Map
+from settings import *
+from menu import Menu
+from map import Map
+from level import Level
 
 
 class Game:
@@ -13,14 +14,15 @@ class Game:
         pygame.display.set_caption('Projekt Rogal')  # nazwa do zmiany
         self.clock = pygame.time.Clock()
         self.menu = Menu()
-        self.menu.give_board_size(self.resolution[0], self.resolution[1])  # screen params
+        self.menu.give_board_size(*self.resolution)  # screen params
         self.menu.set_positions(self.screen)
+        self.level=Level()
 
     def hide_menu(self):
         self.menu_is_present = False
 
-    def show_map(self):
-        self.map = Map(self.screen, self.resolution[0], self.resolution[1])
+    #def show_map(self):
+        #self.map = Map(self.screen, self.resolution[0], self.resolution[1])
 
     def run(self):
 
@@ -32,7 +34,9 @@ class Game:
 
             if self.menu_is_present:
                 self.menu.run(self)
-
+            else:
+                self.screen.fill('black')
+                self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)  # to sa FPS, do ustawienia pozniej z (settings.py)
 
