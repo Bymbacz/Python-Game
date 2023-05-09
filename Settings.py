@@ -7,8 +7,8 @@ WIDTH = 1280
 HEIGHT = 720
 MODE_TYPES = [pygame.FULLSCREEN, pygame.NOFRAME, pygame.SHOWN] #sposob wyswietlania
 
-TILESIZE = 64
-SCALE = 4
+TILESIZE = 16
+SCALE = 3
 
 FPS = 60
 

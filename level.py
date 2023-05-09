@@ -30,8 +30,8 @@ class Level:
             for row_index, row in enumerate(layout):
                 for col_index, col in enumerate(row):
                     if col != '-1':
-                        x = col_index * TILESIZE
-                        y = row_index * TILESIZE
+                        x = col_index * TILESIZE*SCALE
+                        y = row_index * TILESIZE*SCALE
                         if style == 'STOP':
                             Tile((x, y), [self.obstacle_sprites], 'invisible')
                         if style == 'Enemies':

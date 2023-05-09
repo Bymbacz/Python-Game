@@ -1,7 +1,6 @@
 import pygame, sys
 from Settings import *
 from menu import Menu
-from map import Map
 from level import Level
 
 
@@ -20,9 +19,6 @@ class Game:
 
     def hide_menu(self):
         self.menu_is_present = False
-
-    #def show_map(self):
-        #self.map = Map(self.screen, self.resolution[0], self.resolution[1])
 
     def run(self):
 
